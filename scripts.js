@@ -17,140 +17,133 @@ function addToTable2(tableId, valArray) {
     }
 }
 
-function parseInputTask2() {
-    let inputArray = [];
-    for (let i = 1; i < 8; i++) {
-        let element = document.getElementById("Task2_Input" + i).value;
-        inputArray.push(element);
-    }
 
-    return inputArray
-}
-
-function parseInputTask3() {
-    let inputArray = [];
-    for (let i = 1; i < 4; i++) {
-        let element = document.getElementById("Task3_Input" + i).value;
-        inputArray.push(element);
-    }
-
-    return inputArray
-}
-
-function findStrings(array, element, index) {
-    let resArray = [];
-    for (let i = 0; i < array.length; i++) {
-        let str = array[i]
-        if (str.toString().charAt(str.length + index) === element.toString()) {
-            resArray.push(i + 1)
-        }
-    }
-    return resArray
-}
-
-function checkIfOnlyOneOne(array, mainArray) {
-    let resArray = [[], []];
-    for (const index of array) {
-        let element = mainArray[index - 1].toString();
-        let count_one = element.split("1").length - 1;
-        if (count_one === 1) {
-            resArray[0].push(index);
-        } else {
-            resArray[1].push(index);
-        }
-    }
-    return resArray;
-}
-
-function arrayToTableRow(array) {
-    return array.join(", ");
-}
-
-function removewithfilter(arr) {
-    let outputArray = arr.filter(function (v, i, self) {
-
-        // It returns the index of the first
-        // instance of each value
-        return i == self.indexOf(v);
-    });
-
-    return outputArray;
-}
-
-function getIndexesInclude(array1, array2, array3) {
-    let array = removewithfilter(array1[1].concat(array2[1]).concat(array3[1])).sort();
-    // console.log(array)
-    return array
-}
-
-
-function fill_task1_table2(include_indexes) {
-    let resArray = []
-    for (let i = 1; i < global_Q; i++) {
-        let word = "X_" + i.toString();
-        let code = i.toString(2).padStart(4, '0');
-        let current_index = 3;
-        let current_row = ["-", "-", "-", "-", "-", "-", "-", "-"]
-        // for (let j = 0; j < 8; j++) {
-        //     if (include_indexes.includes(j-1)) {
-        //         current_row[j] = code[current_index];
-        //         current_index += 1;
-        //     }
-        // }
-        for (const index of include_indexes) {
-            current_row[8 - index] = code[current_index]
-            current_index -= 1
-        }
-
-        resArray.push(current_row)
-        let valArray = [word, code].concat(current_row)
-
-        addToTable2("Task2_table2", valArray)
-    }
-    return resArray;
-}
-
-function calculateFromIndexes(array_row, array_indexes) {
-    for (const left_index of array_indexes[0]) {
-        let val = 0;
-        for (const right_index of array_indexes[1]) {
-            let res = val ^ array_row[8 - right_index]
-            // console.log(right_index, val, array_row[8 - right_index], res)
-            val = res;
-
-        }
-        array_row[8 - left_index] = val;
-        // console.log(array_row, val)
-    }
-
-    return array_row
-    //TODO этот ряд вывести в таблицу
-}
-
-function fill_task1_table3(input_array, array1, array1_, array1__, twoMistakes) {
-    let resArray = []
-    for (let i = 0; i < global_Q - 1; i++) {
-        let word = "X_" + (i + 1).toString();
-        let code = (i + 1).toString(2).padStart(4, '0');
-
-        let current_row = calculateFromIndexes(input_array[i], array1);
-        current_row = calculateFromIndexes(current_row, array1_);
-        current_row = calculateFromIndexes(current_row, array1__);
-        current_row = calculateFromIndexes(current_row, twoMistakes);
-
-
-        resArray.push([code, current_row.join("")])
-        let valArray = [word, code].concat(current_row)
-
-        addToTable2("Task2_table3", valArray)
-    }
-    return resArray;
-}
-
+var global_Q = 16
 var coding_array = []
 
 function executeTask2() {
     parceQ()
+
+    function parseInputTask2() {
+        let inputArray = [];
+        for (let i = 1; i < 8; i++) {
+            let element = document.getElementById("Task2_Input" + i).value;
+            inputArray.push(element);
+        }
+
+        return inputArray
+    }
+
+    function findStrings(array, element, index) {
+        let resArray = [];
+        for (let i = 0; i < array.length; i++) {
+            let str = array[i]
+            if (str.toString().charAt(str.length + index) === element.toString()) {
+                resArray.push(i + 1)
+            }
+        }
+        return resArray
+    }
+
+    function checkIfOnlyOneOne(array, mainArray) {
+        let resArray = [[], []];
+        for (const index of array) {
+            let element = mainArray[index - 1].toString();
+            let count_one = element.split("1").length - 1;
+            if (count_one === 1) {
+                resArray[0].push(index);
+            } else {
+                resArray[1].push(index);
+            }
+        }
+        return resArray;
+    }
+
+    function arrayToTableRow(array) {
+        return array.join(", ");
+    }
+
+    function removewithfilter(arr) {
+        let outputArray = arr.filter(function (v, i, self) {
+
+            // It returns the index of the first
+            // instance of each value
+            return i == self.indexOf(v);
+        });
+
+        return outputArray;
+    }
+
+    function getIndexesInclude(array1, array2, array3) {
+        let array = removewithfilter(array1[1].concat(array2[1]).concat(array3[1])).sort();
+        // console.log(array)
+        return array
+    }
+
+
+    function fill_task1_table2(include_indexes) {
+        let resArray = []
+        for (let i = 1; i < global_Q; i++) {
+            let word = "X_" + i.toString();
+            let code = i.toString(2).padStart(4, '0');
+            let current_index = 3;
+            let current_row = ["-", "-", "-", "-", "-", "-", "-", "-"]
+            // for (let j = 0; j < 8; j++) {
+            //     if (include_indexes.includes(j-1)) {
+            //         current_row[j] = code[current_index];
+            //         current_index += 1;
+            //     }
+            // }
+            for (const index of include_indexes) {
+                current_row[8 - index] = code[current_index]
+                current_index -= 1
+            }
+
+            resArray.push(current_row)
+            let valArray = [word, code].concat(current_row)
+
+            addToTable2("Task2_table2", valArray)
+        }
+        return resArray;
+    }
+
+    function calculateFromIndexes(array_row, array_indexes) {
+        for (const left_index of array_indexes[0]) {
+            let val = 0;
+            for (const right_index of array_indexes[1]) {
+                let res = val ^ array_row[8 - right_index]
+                // console.log(right_index, val, array_row[8 - right_index], res)
+                val = res;
+
+            }
+            array_row[8 - left_index] = val;
+            // console.log(array_row, val)
+        }
+
+        return array_row
+        //TODO этот ряд вывести в таблицу
+    }
+
+    function fill_task1_table3(input_array, array1, array1_, array1__, twoMistakes) {
+        let resArray = []
+        for (let i = 0; i < global_Q - 1; i++) {
+            let word = "X_" + (i + 1).toString();
+            let code = (i + 1).toString(2).padStart(4, '0');
+
+            let current_row = calculateFromIndexes(input_array[i], array1);
+            current_row = calculateFromIndexes(current_row, array1_);
+            current_row = calculateFromIndexes(current_row, array1__);
+            current_row = calculateFromIndexes(current_row, twoMistakes);
+
+
+            resArray.push([code, current_row.join("")])
+            let valArray = [word, code].concat(current_row)
+
+            addToTable2("Task2_table3", valArray)
+        }
+        return resArray;
+    }
+
 
     // purge table 1
     const Task1_table1 = document.getElementById("Task2_table1Body");
@@ -195,13 +188,22 @@ function executeTask2() {
 
 }
 
-var global_Q = 16
 
 function parceQ() {
     global_Q = document.getElementById("global_Q_query").value
 }
 
 function executeTask3() {
+    function parseInputTask3() {
+        let inputArray = [];
+        for (let i = 1; i < 4; i++) {
+            let element = document.getElementById("Task3_Input" + i).value;
+            inputArray.push(element);
+        }
+
+        return inputArray
+    }
+
     let inputArray = parseInputTask3();
     parceQ()
     console.log(inputArray)
