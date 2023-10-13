@@ -17,9 +17,10 @@ function addToTable2(tableId, valArray) {
     }
 }
 
-
-var global_Q = 16
-var coding_array = []
+var global_indexes = [[], [], []];
+var global_pointers = [];
+var global_Q = 16;
+var coding_array = [];
 
 function executeTask2() {
     parceQ()
@@ -156,6 +157,9 @@ function executeTask2() {
     let endsWith1__Array = findStrings(inputArray, "1", -3)
     addToTable("Task2_table1", "1 - третья с конца", arrayToTableRow(endsWith1__Array))
 
+    global_indexes = [endsWith1Array, endsWith1_Array, endsWith1__Array]
+    global_pointers = inputArray.slice()
+
     addToTable("Task2_table1", "Слева только 1 единица в записи", '--------')
 
     let endsWith1ArraySplit = checkIfOnlyOneOne(endsWith1Array, inputArray);
@@ -206,8 +210,8 @@ function executeTask3() {
 
     let inputArray = parseInputTask3();
     parceQ()
-    console.log(inputArray)
-    console.log(coding_array)
+    // console.log(inputArray)
+    // console.log(coding_array)
 
     // purge table 1
     const Task3_table1 = document.getElementById("Task3_table1Body");
@@ -220,4 +224,72 @@ function executeTask3() {
             }
         }
     }
+}
+
+function executeTask4() {
+    function parseInputTask4() {
+        let inputArray = [];
+        for (let i = 1; i < 5; i++) {
+            let element = document.getElementById("Task4_Input" + i).value;
+            inputArray.push(element);
+        }
+        return inputArray
+    }
+
+    function xorByIndexes(array, indexes) {
+        var res = 0;
+        for (const index of indexes) {
+            res = res ^ array[array.length - index]
+            // console.log(index, res, array[array.length - index])
+        }
+        return res
+    }
+    function bitwiseXor(first, second) {
+        let res = []
+        for (let i = 0; i < 7; i++) {
+            res[i] = first[i] ^ second[i]
+        }
+        return res.join("")
+    }
+    function convertTable() {
+        let res = []
+        for (const pair of coding_array) {
+            let element = pair[1].toString().slice(1, 8)
+            res.push(element)
+        }
+        return res
+    }
+
+    // purge table 1
+    const Task4_table1 = document.getElementById("Task4_table1Body");
+    Task4_table1.innerHTML = "";
+
+    let inputArray = parseInputTask4();
+    for (const msg of inputArray) {
+        let b1 = xorByIndexes(msg.split(""), global_indexes[0])
+        let b2 = xorByIndexes(msg.split(""), global_indexes[1])
+        let b3 = xorByIndexes(msg.split(""), global_indexes[2])
+        let pointer = b3.toString() + b2.toString() + b1.toString()
+        // console.log(pointer)
+        let vector_num = global_pointers.indexOf(pointer) + 1
+        // console.log(pointer, vector_num)
+        let vector = ("0".repeat(7-vector_num)+"1"+"0".repeat(vector_num)).slice(0, 7)
+        // console.log(pointer, vector_num, vector)
+        let res = bitwiseXor(msg, vector)
+        console.log(pointer, vector_num, vector, res)
+
+        let bit7 = convertTable()
+
+        let msg_in_table = bit7.includes(msg)
+        let res_in_table = bit7.includes(res)
+
+        let flag = false
+        if (msg_in_table == false && res_in_table == true) {
+            flag = true
+        }
+
+        addToTable2("Task4_table1", [msg, res, flag])
+    }
+
+
 }

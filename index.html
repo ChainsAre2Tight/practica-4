@@ -12,14 +12,16 @@
         <p>Введите Q (до 16)</p>
         <input type="text" id="global_Q_query">
         <h1>Задание 2</h1>
-        <h1>Введите опознаватели</h1>
-        <input type="text" id="Task2_Input1">
-        <input type="text" id="Task2_Input2">
-        <input type="text" id="Task2_Input3">
-        <input type="text" id="Task2_Input4">
-        <input type="text" id="Task2_Input5">
-        <input type="text" id="Task2_Input6">
-        <input type="text" id="Task2_Input7">
+        <div class="Task1Input">
+            <h1>Введите опознаватели</h1>
+            <p><input type="text" id="Task2_Input1"></p>
+            <p><input type="text" id="Task2_Input2"></p>
+            <p><input type="text" id="Task2_Input3"></p>
+            <p><input type="text" id="Task2_Input4"></p>
+            <p><input type="text" id="Task2_Input5"></p>
+            <p><input type="text" id="Task2_Input6"></p>
+            <p><input type="text" id="Task2_Input7"></p>
+        </div>
 
         <button onclick="executeTask2()">Вычислить 2 задание</button>
         <table id="Task2_table1">
@@ -72,18 +74,42 @@
             </tbody>
         </table>
         <h1>Введите кодируемое сообщение</h1>
-        <input type="text" id="Task3_Input1">
-        <input type="text" id="Task3_Input2">
-        <input type="text" id="Task3_Input3">
-        <button onclick="executeTask3()">Закодировать</button>
+        <p><input type="text" id="Task3_Input1"></p>
+        <p><input type="text" id="Task3_Input2"></p>
+        <p><input type="text" id="Task3_Input3"></p>
+        <p>
+            <button onclick="executeTask3()">Закодировать</button>
+        </p>
         <table id="Task3_table1">
-            <thead>
+            <thead>Просто сопоставляем с таблицей
             <tr>
                 <th>Ввод</th>
                 <th>Вывод</th>
             </tr>
             </thead>
             <tbody id="Task3_table1Body">
+            </tbody>
+        </table>
+    </section>
+    <section id="task4">
+        <h1>Задание 4</h1>
+        <h2>Введите кодовые комбинации</h2>
+        <p><input type="text" id="Task4_Input1"></p>
+        <p><input type="text" id="Task4_Input2"></p>
+        <p><input type="text" id="Task4_Input3"></p>
+        <p><input type="text" id="Task4_Input4"></p>
+        <p>
+            <button onclick="executeTask4()">Закодировать</button>
+        </p>
+        <table id="Task4_table1">
+            <thead>
+            <tr>
+                <th>Искомое сообщение</th>
+                <th>Исправленное сообщение</th>
+                <th>Была ли оштбка исправлена?</th>
+            </tr>
+            </thead>
+            <tbody id="Task4_table1Body">
             </tbody>
         </table>
     </section>
