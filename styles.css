@@ -10,6 +10,61 @@ body {
     justify-content: center;
 }
 
+.center {
+    margin-top: 2%;
+    background-color: greenyellow;
+    border-radius: 15px;
+    width: fit-content;
+}
+
+.tasks {
+    background-color: #0f0f0f;
+    border-radius: 15px;
+    margin-block: 1.5%;
+    margin-inline: 1.5%;
+    padding: 2%;
+
+}
+
+.input {
+    background-color: #2a181e;
+    border-radius: 15px;
+    padding: 1%;
+    width: fit-content;
+}
+.authTabs {
+    cursor: pointer;
+}
+.input button {
+    font-size: 22px;
+    background-color: #2a181e;
+    color: antiquewhite;
+    border: 3px solid;
+    border-color: green;
+    border-radius: 10px;
+    margin-top: 2%;
+}
+.input button:hover {
+    background-color: lightslategray;
+}
+
+details {
+    background-color: black;
+    border: 5px solid white;
+    width: 95%;
+    border-radius: 15px;
+    padding: 2%;
+}
+
+.task4details {
+    padding: 1%;
+    border-top: 5px solid greenyellow;
+}
+.task4details h3 {
+    margin-block: 1%;
+}
+
+
 #task3, #task4, table {
     display: none;
 }
@@ -27,6 +82,7 @@ table {
 }
 p {
     font-size: 22px;
+    width: fit-content;
 }
 h1 {
     font-size: 30px;
@@ -36,5 +92,8 @@ details {
     font-size: 22px;
 }
 .input p {
+    margin-block: 0.5%;
+}
+.input h2 {
     margin-block: 0.5%;
 }

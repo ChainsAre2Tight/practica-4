@@ -302,7 +302,7 @@ function executeTask4() {
     }
 
     function equationsToHTML(msg, equation1, equation2, equation3, b3b2b1, vector, result) {
-        return "<li><article class='4taskdetails'>" + "<h3>Решение задачи 4 для (" + msg + ")</h3>" +
+        return "<li><article class='task4details'>" + "<h3>Решение задачи 4 для (" + msg + ")</h3>" +
             "<ol>" +
             "<li>" + equation1 + "</li>" +
             "<li>" + equation2 + "</li>" +

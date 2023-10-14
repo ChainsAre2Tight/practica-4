@@ -9,15 +9,20 @@
 <body>
 <div class="main">
     <div class="center">
-        <section id="task2">
+        <section id="task0" class="tasks">
             <h1>Важно!</h1>
             <p>Для обновления данных нужно пересчитать значения во 2м задании</p>
-            <p>Введите Q (9 или 16)</p>
-            <input type="text" id="global_Q_query">
-            <p style="margin-top: 0.5%; font-size: 16px">По умолчанию 9 (если 3 задание не работает ставим 16)</p>
+            <div class="input">
+                <p>Введите Q (9 или 16)</p>
+                <input type="text" id="global_Q_query">
+                <p style="margin-top: 0.5%; font-size: 16px">По умолчанию 9 (если 3 задание не работает ставим 16)</p>
+            </div>
+        </section>
+        <section id="task2" class="tasks">
+
             <h1>Задание 2</h1>
             <div id="Task1Input" class="input">
-                <h1>Введите опознаватели</h1>
+                <h2>Введите опознаватели</h2>
                 <p>1: <input type="text" id="Task2_Input1"></p>
                 <p>2: <input type="text" id="Task2_Input2"></p>
                 <p>3: <input type="text" id="Task2_Input3"></p>
@@ -25,9 +30,10 @@
                 <p>5: <input type="text" id="Task2_Input5"></p>
                 <p>6: <input type="text" id="Task2_Input6"></p>
                 <p>7: <input type="text" id="Task2_Input7"></p>
+                <button onclick="executeTask2()">Вычислить 2 задание</button>
             </div>
 
-            <button onclick="executeTask2()">Вычислить 2 задание</button>
+
             <table id="Task2_table1">
                 <thead>
                 <tr>
@@ -39,7 +45,7 @@
             </table>
 
         </section>
-        <section id="task3">
+        <section id="task3" class="tasks">
             <h1>Задание 3</h1>
             <details>
                 <table id="Task2_table2">
@@ -102,7 +108,7 @@
                 </tbody>
             </table>
         </section>
-        <section id="task4">
+        <section id="task4" class="tasks">
             <h1>Задание 4</h1>
             <h2>Введите кодовые комбинации</h2>
             <div class="input" id="Task4Input">
