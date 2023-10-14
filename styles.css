@@ -36,3 +36,6 @@ h1 {
 details {
     font-size: 22px;
 }
+.input p {
+    margin-block: 0.5%;
+}

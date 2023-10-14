@@ -13,7 +13,7 @@
             <p>Введите Q (до 16)</p>
             <input type="text" id="global_Q_query">
             <h1>Задание 2</h1>
-            <div class="Task1Input">
+            <div id="Task1Input" class="input">
                 <h1>Введите опознаватели</h1>
                 <p>1: <input type="text" id="Task2_Input1"></p>
                 <p>2: <input type="text" id="Task2_Input2"></p>
@@ -79,12 +79,14 @@
                 </tbody>
             </table>
             <h1>Введите кодируемое сообщение</h1>
-            <p>1: <input type="text" id="Task3_Input1"></p>
-            <p>2: <input type="text" id="Task3_Input2"></p>
-            <p>3: <input type="text" id="Task3_Input3"></p>
-            <p>
-                <button onclick="executeTask3()">Закодировать</button>
-            </p>
+            <div class="input" id="Task3Input">
+                <p>1: <input type="text" id="Task3_Input1"></p>
+                <p>2: <input type="text" id="Task3_Input2"></p>
+                <p>3: <input type="text" id="Task3_Input3"></p>
+                <p>
+                    <button onclick="executeTask3()">Закодировать</button>
+                </p>
+            </div>
             <table id="Task3_table1">
                 <thead>Просто сопоставляем с таблицей
                 <tr>
@@ -99,13 +101,15 @@
         <section id="task4">
             <h1>Задание 4</h1>
             <h2>Введите кодовые комбинации</h2>
-            <p>1: <input type="text" id="Task4_Input1"></p>
-            <p>2: <input type="text" id="Task4_Input2"></p>
-            <p>3: <input type="text" id="Task4_Input3"></p>
-            <p>4: <input type="text" id="Task4_Input4"></p>
-            <p>
-                <button onclick="executeTask4()">Закодировать</button>
-            </p>
+            <div class="input" id="Task4Input">
+                <p>1: <input type="text" id="Task4_Input1"></p>
+                <p>2: <input type="text" id="Task4_Input2"></p>
+                <p>3: <input type="text" id="Task4_Input3"></p>
+                <p>4: <input type="text" id="Task4_Input4"></p>
+                <p>
+                    <button onclick="executeTask4()">Закодировать</button>
+                </p>
+            </div>
             <table id="Task4_table1">
                 <thead>
                 <tr>
