@@ -333,11 +333,12 @@ function executeTask4() {
     Task4DetailsBody.innerHTML = ""
 
     for (const msg of inputArray) {
+        if (msg != "") {
+            let asd = fixMessage(msg)
 
-        let asd = fixMessage(msg)
-
-        addToTable2("Task4_table1", asd.slice(0, 3))
-        writeToDetails(asd[3])
+            addToTable2("Task4_table1", asd.slice(0, 3))
+            writeToDetails(asd[3])
+        }
     }
     // TODO Сделать вывод исправлений для каждого элемента
     document.getElementById("Task4_table1").style.display = "table"
