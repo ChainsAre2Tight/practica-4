@@ -244,6 +244,7 @@ function executeTask4() {
         }
         return res
     }
+
     function bitwiseXor(first, second) {
         let res = []
         for (let i = 0; i < 7; i++) {
@@ -251,6 +252,7 @@ function executeTask4() {
         }
         return res.join("")
     }
+
     function convertTable() {
         let res = []
         for (const pair of coding_array) {
@@ -260,35 +262,85 @@ function executeTask4() {
         return res
     }
 
-    // purge table 1
-    const Task4_table1 = document.getElementById("Task4_table1Body");
-    Task4_table1.innerHTML = "";
 
-    let inputArray = parseInputTask4();
-    for (const msg of inputArray) {
+
+    function fixMessage(msg) {
         let b1 = xorByIndexes(msg.split(""), global_indexes[0])
+        let equationB1 = indexesToEquation("b1", global_indexes[0], b1)
         let b2 = xorByIndexes(msg.split(""), global_indexes[1])
+        let equationB2 = indexesToEquation("b2", global_indexes[1], b2)
         let b3 = xorByIndexes(msg.split(""), global_indexes[2])
+        let equationB3 = indexesToEquation("b3", global_indexes[2], b3)
         let pointer = b3.toString() + b2.toString() + b1.toString()
-        // console.log(pointer)
+
         let vector_num = global_pointers.indexOf(pointer) + 1
-        // console.log(pointer, vector_num)
-        let vector = ("0".repeat(7-vector_num)+"1"+"0".repeat(vector_num)).slice(0, 7)
-        // console.log(pointer, vector_num, vector)
+        let vector = ("0".repeat(7 - vector_num) + "1" + "0".repeat(vector_num)).slice(0, 7)
         let res = bitwiseXor(msg, vector)
-        console.log(pointer, vector_num, vector, res)
+        // console.log(pointer, vector_num, vector, res)
 
         let bit7 = convertTable()
 
         let msg_in_table = bit7.includes(msg)
         let res_in_table = bit7.includes(res)
 
-        let flag = false
+        let flag = "Нет"
         if (msg_in_table == false && res_in_table == true) {
-            flag = true
+            flag = "Да"
         }
 
-        addToTable2("Task4_table1", [msg, res, flag])
+        let htmlVersion = equationsToHTML(msg, equationB1, equationB2, equationB3, pointer, vector, res)
+
+        return [msg, res, flag, htmlVersion]
+    }
+
+    function indexesToEquation(left_part, indexes, result) {
+        function indexToIndexesLetter(cher, index) {
+            return cher.toString() + "" + index.toString()
+        }
+
+        let right_part = indexes.map(x => indexToIndexesLetter("a", x)).join(" ⊕ ")
+        return left_part + " = " + right_part + " = " + result
+    }
+
+    function equationsToHTML(msg, equation1, equation2, equation3, b3b2b1, vector, result) {
+        return "<li><article class='4taskdetails'>" + "<h3>Решение задачи 4 для (" + msg + ")</h3>" +
+            "<ol>" +
+                "<li>" + equation1 + "</li>" +
+                "<li>" + equation2 + "</li>" +
+                "<li>" + equation3 + "</li>" +
+            "</ol>" +
+            "<p>b3b2b1 = " + b3b2b1 + "</p>" +
+            "<p>Соответствующий этому опознавателю вектор ошибок:</p>" +
+            "<p>(" + vector + ")</p>" +
+            "<p>Суммируем кодовую комбинацию с вектором ошибок:</p>" +
+            "<p>(" + msg + ') ⊕ (' + vector + ") = (" + result + ")</p>" +
+            "</article></li>";
+    }
+
+    function writeToDetails(newValue) {
+        const body = document.getElementById("Task4DetailsBody")
+        body.innerHTML = body.innerHTML + newValue
+    }
+
+
+
+
+    let inputArray = parseInputTask4();
+
+    // purge table 1
+    const Task4_table1 = document.getElementById("Task4_table1Body");
+    Task4_table1.innerHTML = "";
+
+    // purge details
+    const Task4DetailsBody = document.getElementById("Task4DetailsBody");
+    Task4DetailsBody.innerHTML = ""
+
+    for (const msg of inputArray) {
+
+        let asd = fixMessage(msg)
+
+        addToTable2("Task4_table1", asd.slice(0, 3))
+        writeToDetails(asd[3])
     }
 
 
