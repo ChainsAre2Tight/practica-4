@@ -13,11 +13,14 @@ body {
     margin: auto;
 }
 
-table, td {
+table, td{
     border: 1px solid;
     border-collapse: collapse;
     font-size: 20px;
-    width: 90%;
+    width: auto;
+}
+td, th {
+    padding-inline: 0.5%;
 }
 table {
     margin-top: 2%;
