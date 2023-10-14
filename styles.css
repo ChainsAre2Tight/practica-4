@@ -28,3 +28,7 @@ p {
 h1 {
     font-size: 30px;
 }
+
+details {
+    font-size: 22px;
+}
