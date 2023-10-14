@@ -3,21 +3,25 @@ body {
     background-color: black;
     width: 100%
 }
-
-.page {
+.main {
+    margin: auto;
     display: flex;
     align-items: center;
-}
-.main {
-    width: 90%;
-    margin: auto;
+    justify-content: center;
 }
 
-table, td {
+#task3, #task4, table {
+    display: none;
+}
+
+table, td{
     border: 1px solid;
     border-collapse: collapse;
     font-size: 20px;
-    width: 90%;
+    width: auto;
+}
+td, th {
+    padding-inline: 0.5%;
 }
 table {
     margin-top: 2%;
@@ -31,4 +35,7 @@ h1 {
 
 details {
     font-size: 22px;
+}
+.input p {
+    margin-block: 0.5%;
 }
