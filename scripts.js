@@ -117,7 +117,6 @@ function executeTask2() {
         }
 
         return array_row
-        //TODO этот ряд вывести в таблицу
     }
 
     function fill_task1_table3(input_array, array1, array1_, array1__, twoMistakes) {
@@ -181,7 +180,6 @@ function executeTask2() {
     Task2_table3.innerHTML = "";
 
     let table3_array = fill_task1_table3(table2_array, endsWith1ArraySplit, endsWith1_ArraySplit, endsWith1__ArraySplit, twoMistakesArraySplit)
-    // TODO сделать кодирование на сонове ввода и этой таблицы
     coding_array = table3_array.slice()
     // console.log(coding_array)
 
@@ -340,7 +338,6 @@ function executeTask4() {
             writeToDetails(asd[3])
         }
     }
-    // TODO Сделать вывод исправлений для каждого элемента
     document.getElementById("Task4_table1").style.display = "table"
 
 }
