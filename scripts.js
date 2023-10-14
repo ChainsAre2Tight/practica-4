@@ -149,6 +149,7 @@ function executeTask2() {
     // purge table 1
     const Task1_table1 = document.getElementById("Task2_table1Body");
     Task1_table1.innerHTML = "";
+
     let inputArray = parseInputTask2();
     let endsWith1Array = findStrings(inputArray, "1", -1)
     addToTable("Task2_table1", "Заканчиваются на 1", arrayToTableRow(endsWith1Array))
@@ -188,8 +189,13 @@ function executeTask2() {
     // TODO сделать кодирование на сонове ввода и этой таблицы
     coding_array = table3_array.slice()
     // console.log(coding_array)
-    return table3_array;
 
+    document.getElementById("Task2_table1").style.display = "table"
+    document.getElementById("Task2_table2").style.display = "table"
+    document.getElementById("Task2_table3").style.display = "table"
+    document.getElementById("task3").style.display = "block"
+    document.getElementById("task4").style.display = "block"
+    return table3_array;
 }
 
 
@@ -210,8 +216,7 @@ function executeTask3() {
 
     let inputArray = parseInputTask3();
     parceQ()
-    // console.log(inputArray)
-    // console.log(coding_array)
+    document.getElementById("Task3_table1").style.display = "table"
 
     // purge table 1
     const Task3_table1 = document.getElementById("Task3_table1Body");
@@ -263,7 +268,6 @@ function executeTask4() {
     }
 
 
-
     function fixMessage(msg) {
         let b1 = xorByIndexes(msg.split(""), global_indexes[0])
         let equationB1 = indexesToEquation("b1", global_indexes[0], b1)
@@ -305,9 +309,9 @@ function executeTask4() {
     function equationsToHTML(msg, equation1, equation2, equation3, b3b2b1, vector, result) {
         return "<li><article class='4taskdetails'>" + "<h3>Решение задачи 4 для (" + msg + ")</h3>" +
             "<ol>" +
-                "<li>" + equation1 + "</li>" +
-                "<li>" + equation2 + "</li>" +
-                "<li>" + equation3 + "</li>" +
+            "<li>" + equation1 + "</li>" +
+            "<li>" + equation2 + "</li>" +
+            "<li>" + equation3 + "</li>" +
             "</ol>" +
             "<p>b3b2b1 = " + b3b2b1 + "</p>" +
             "<p>Соответствующий этому опознавателю вектор ошибок:</p>" +
@@ -321,8 +325,6 @@ function executeTask4() {
         const body = document.getElementById("Task4DetailsBody")
         body.innerHTML = body.innerHTML + newValue
     }
-
-
 
 
     let inputArray = parseInputTask4();
@@ -343,6 +345,6 @@ function executeTask4() {
         writeToDetails(asd[3])
     }
     // TODO Сделать вывод исправлений для каждого элемента
-
+    document.getElementById("Task4_table1").style.display = "table"
 
 }
