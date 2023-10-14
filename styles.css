@@ -27,18 +27,18 @@ body {
 }
 
 .input {
-    background-color: #2a181e;
     border-radius: 15px;
-    padding: 1%;
+    padding: 2%;
     width: fit-content;
+    border: 3px solid white;
 }
 .authTabs {
     cursor: pointer;
 }
 .input button {
     font-size: 22px;
-    background-color: #2a181e;
-    color: antiquewhite;
+    background-color: #1b2322;
+    color: white;
     border: 3px solid;
     border-color: green;
     border-radius: 10px;
