@@ -159,14 +159,14 @@ function executeTask2() {
     addToTable("Task2_table1", "Слева только 1 единица в записи", '--------')
 
     let endsWith1ArraySplit = checkIfOnlyOneOne(endsWith1Array, inputArray);
-    addToTable("Task2_table1", "Заканчивается на 1", endsWith1ArraySplit[0].join(" + ") + " = " + endsWith1ArraySplit[1].join(" + "));
+    addToTable("Task2_table1", "Заканчивается на 1", endsWith1ArraySplit[0].join(" ⊕ ") + " = " + endsWith1ArraySplit[1].join(" ⊕ "));
     let endsWith1_ArraySplit = checkIfOnlyOneOne(endsWith1_Array, inputArray);
-    addToTable("Task2_table1", "1 - вторая с конца", endsWith1_ArraySplit[0].join(" + ") + " = " + endsWith1_ArraySplit[1].join(" + "));
+    addToTable("Task2_table1", "1 - вторая с конца", endsWith1_ArraySplit[0].join(" ⊕ ") + " = " + endsWith1_ArraySplit[1].join(" ⊕ "));
     let endsWith1__ArraySplit = checkIfOnlyOneOne(endsWith1__Array, inputArray);
-    addToTable("Task2_table1", "1 - третья с конца", endsWith1__ArraySplit[0].join(" + ") + " = " + endsWith1__ArraySplit[1].join(" + "));
+    addToTable("Task2_table1", "1 - третья с конца", endsWith1__ArraySplit[0].join(" ⊕ ") + " = " + endsWith1__ArraySplit[1].join(" ⊕ "));
 
     let twoMistakesArraySplit = [[8], [1, 2, 3, 4, 5, 6, 7]];
-    addToTable("Task2_table1", "Для исправления 2х ошибок", twoMistakesArraySplit[0].join(" + ") + " = " + twoMistakesArraySplit[1].join(" + "));
+    addToTable("Task2_table1", "Для исправления 2х ошибок", twoMistakesArraySplit[0].join(" ⊕ ") + " = " + twoMistakesArraySplit[1].join(" ⊕ "));
 
 
     // purge table 2
