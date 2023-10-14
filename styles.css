@@ -18,10 +18,9 @@ table, td{
     border: 1px solid;
     border-collapse: collapse;
     font-size: 20px;
-    width: auto;
 }
 td, th {
-    padding-inline: 0.5%;
+    padding-left: 1%;
 }
 table {
     margin-top: 2%;
