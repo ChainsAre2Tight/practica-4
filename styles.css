@@ -3,14 +3,11 @@ body {
     background-color: black;
     width: 100%
 }
-
-.page {
+.main {
+    margin: auto;
     display: flex;
     align-items: center;
-}
-.main {
-    width: 90%;
-    margin: auto;
+    justify-content: center;
 }
 
 table, td{
