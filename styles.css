@@ -54,6 +54,7 @@ details {
     width: 95%;
     border-radius: 15px;
     padding: 2%;
+    margin-top: 2%;
 }
 
 .task4details {
@@ -96,4 +97,7 @@ details {
 }
 .input h2 {
     margin-block: 0.5%;
+}
+p {
+    margin-block: 2%;
 }
