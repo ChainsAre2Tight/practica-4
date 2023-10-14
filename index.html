@@ -7,112 +7,116 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-<div class="main">
-    <section id="task2">
-        <p>Введите Q (до 16)</p>
-        <input type="text" id="global_Q_query">
-        <h1>Задание 2</h1>
-        <div class="Task1Input">
-            <h1>Введите опознаватели</h1>
-            <p><input type="text" id="Task2_Input1"></p>
-            <p><input type="text" id="Task2_Input2"></p>
-            <p><input type="text" id="Task2_Input3"></p>
-            <p><input type="text" id="Task2_Input4"></p>
-            <p><input type="text" id="Task2_Input5"></p>
-            <p><input type="text" id="Task2_Input6"></p>
-            <p><input type="text" id="Task2_Input7"></p>
-        </div>
+<div class="page">
+    <div class="main">
+        <section id="task2">
+            <p>Введите Q (до 16)</p>
+            <input type="text" id="global_Q_query">
+            <h1>Задание 2</h1>
+            <div class="Task1Input">
+                <h1>Введите опознаватели</h1>
+                <p><input type="text" id="Task2_Input1"></p>
+                <p><input type="text" id="Task2_Input2"></p>
+                <p><input type="text" id="Task2_Input3"></p>
+                <p><input type="text" id="Task2_Input4"></p>
+                <p><input type="text" id="Task2_Input5"></p>
+                <p><input type="text" id="Task2_Input6"></p>
+                <p><input type="text" id="Task2_Input7"></p>
+            </div>
 
-        <button onclick="executeTask2()">Вычислить 2 задание</button>
-        <table id="Task2_table1">
-            <thead>
-            <tr>
-                <th>Таблица 1</th>
-            </tr>
-            </thead>
-            <tbody id="Task2_table1Body">
-            </tbody>
-        </table>
-        <table id="Task2_table2">
-            <thead>Таблица 2 - Заполняем все столбцы, кроме представленных в левых частях уравнений, значениями из
-            безызбыточного кода
-            <tr>
-                <th>Слово</th>
-                <th>Безызбыточный код</th>
-                <th>a_8</th>
-                <th>a_7</th>
-                <th>a_6</th>
-                <th>a_5</th>
-                <th>a_4</th>
-                <th>a_3</th>
-                <th>a_2</th>
-                <th>a_1</th>
-            </tr>
-            </thead>
-            <tbody id="Task2_table2Body">
-            </tbody>
-        </table>
-    </section>
-    <section id="task3">
-        <h1>Задание 3</h1>
-        <table id="Task2_table3">
-            <thead>Таблица 2 - Заполняем оставшиеся столбцы, XOR'я значения по формулам выше
-            <tr>
-                <th>Слово</th>
-                <th>Безызбыточный код</th>
-                <th>a_8</th>
-                <th>a_7</th>
-                <th>a_6</th>
-                <th>a_5</th>
-                <th>a_4</th>
-                <th>a_3</th>
-                <th>a_2</th>
-                <th>a_1</th>
-            </tr>
-            </thead>
-            <tbody id="Task2_table3Body">
-            </tbody>
-        </table>
-        <h1>Введите кодируемое сообщение</h1>
-        <p><input type="text" id="Task3_Input1"></p>
-        <p><input type="text" id="Task3_Input2"></p>
-        <p><input type="text" id="Task3_Input3"></p>
-        <p>
-            <button onclick="executeTask3()">Закодировать</button>
-        </p>
-        <table id="Task3_table1">
-            <thead>Просто сопоставляем с таблицей
-            <tr>
-                <th>Ввод</th>
-                <th>Вывод</th>
-            </tr>
-            </thead>
-            <tbody id="Task3_table1Body">
-            </tbody>
-        </table>
-    </section>
-    <section id="task4">
-        <h1>Задание 4</h1>
-        <h2>Введите кодовые комбинации</h2>
-        <p><input type="text" id="Task4_Input1"></p>
-        <p><input type="text" id="Task4_Input2"></p>
-        <p><input type="text" id="Task4_Input3"></p>
-        <p><input type="text" id="Task4_Input4"></p>
-        <p>
-            <button onclick="executeTask4()">Закодировать</button>
-        </p>
-        <table id="Task4_table1">
-            <thead>
-            <tr>
-                <th>Искомое сообщение</th>
-                <th>Исправленное сообщение</th>
-                <th>Была ли оштбка исправлена?</th>
-            </tr>
-            </thead>
-            <tbody id="Task4_table1Body">
-            </tbody>
-        </table>
-    </section>
+            <button onclick="executeTask2()">Вычислить 2 задание</button>
+            <table id="Task2_table1">
+                <thead>
+                <tr>
+                    <th>Таблица 1</th>
+                </tr>
+                </thead>
+                <tbody id="Task2_table1Body">
+                </tbody>
+            </table>
+            <table id="Task2_table2">
+                <p>Таблица 2 - Заполняем все столбцы, кроме представленных в левых частях уравнений, значениями из
+                    безызбыточного кода</p>
+                <thead>
+                <tr>
+                    <th>Слово</th>
+                    <th>Безызбыточный код</th>
+                    <th>a_8</th>
+                    <th>a_7</th>
+                    <th>a_6</th>
+                    <th>a_5</th>
+                    <th>a_4</th>
+                    <th>a_3</th>
+                    <th>a_2</th>
+                    <th>a_1</th>
+                </tr>
+                </thead>
+                <tbody id="Task2_table2Body">
+                </tbody>
+            </table>
+        </section>
+        <section id="task3">
+            <h1>Задание 3</h1>
+            <p>Таблица 3 - Заполняем оставшиеся столбцы, XOR'я значения по формулам выше</p>
+            <table id="Task2_table3">
+                <thead>
+                <tr>
+                    <th>Слово</th>
+                    <th>Безызбыточный код</th>
+                    <th>a_8</th>
+                    <th>a_7</th>
+                    <th>a_6</th>
+                    <th>a_5</th>
+                    <th>a_4</th>
+                    <th>a_3</th>
+                    <th>a_2</th>
+                    <th>a_1</th>
+                </tr>
+                </thead>
+                <tbody id="Task2_table3Body">
+                </tbody>
+            </table>
+            <h1>Введите кодируемое сообщение</h1>
+            <p><input type="text" id="Task3_Input1"></p>
+            <p><input type="text" id="Task3_Input2"></p>
+            <p><input type="text" id="Task3_Input3"></p>
+            <p>
+                <button onclick="executeTask3()">Закодировать</button>
+            </p>
+            <table id="Task3_table1">
+                <thead>Просто сопоставляем с таблицей
+                <tr>
+                    <th>Ввод</th>
+                    <th>Вывод</th>
+                </tr>
+                </thead>
+                <tbody id="Task3_table1Body">
+                </tbody>
+            </table>
+        </section>
+        <section id="task4">
+            <h1>Задание 4</h1>
+            <h2>Введите кодовые комбинации</h2>
+            <p><input type="text" id="Task4_Input1"></p>
+            <p><input type="text" id="Task4_Input2"></p>
+            <p><input type="text" id="Task4_Input3"></p>
+            <p><input type="text" id="Task4_Input4"></p>
+            <p>
+                <button onclick="executeTask4()">Закодировать</button>
+            </p>
+            <table id="Task4_table1">
+                <thead>
+                <tr>
+                    <th>Искомое сообщение</th>
+                    <th>Исправленное сообщение</th>
+                    <th>Была ли ошибка исправлена?</th>
+                </tr>
+                </thead>
+                <tbody id="Task4_table1Body">
+                </tbody>
+            </table>
+        </section>
+    </div>
 </div>
 <script src="scripts.js"></script>
 </body>

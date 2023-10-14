@@ -290,6 +290,7 @@ function executeTask4() {
 
         addToTable2("Task4_table1", [msg, res, flag])
     }
+    // TODO Сделать вывод исправлений для каждого элемента
 
 
 }
