@@ -342,6 +342,7 @@ function executeTask4() {
         addToTable2("Task4_table1", asd.slice(0, 3))
         writeToDetails(asd[3])
     }
+    // TODO Сделать вывод исправлений для каждого элемента
 
 
 }
