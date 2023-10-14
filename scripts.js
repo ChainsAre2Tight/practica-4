@@ -89,12 +89,7 @@ function executeTask2() {
             let code = i.toString(2).padStart(4, '0');
             let current_index = 3;
             let current_row = ["-", "-", "-", "-", "-", "-", "-", "-"]
-            // for (let j = 0; j < 8; j++) {
-            //     if (include_indexes.includes(j-1)) {
-            //         current_row[j] = code[current_index];
-            //         current_index += 1;
-            //     }
-            // }
+
             for (const index of include_indexes) {
                 current_row[8 - index] = code[current_index]
                 current_index -= 1
@@ -138,7 +133,7 @@ function executeTask2() {
 
 
             resArray.push([code, current_row.join("")])
-            let valArray = [word, code].concat(current_row)
+            let valArray = [word, code].concat(current_row).concat([current_row.join("")])
 
             addToTable2("Task2_table3", valArray)
         }
